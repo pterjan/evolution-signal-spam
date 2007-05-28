@@ -39,9 +39,19 @@ Bugs should be reported to the Google bug tracking system
 
 http://code.google.com/p/evolution-signal-spam/issues/list
 
+Major known issues
+==================
+
+- The icon is the "Save" one which is really bad. The issue is that the whole
+  content of Signal Spam website is licenced under Creative Commons BY-NC-SA
+  so I can not include it if I want this software to be Free.
+
+- This plugin does not support i18n
+
+- The user is not told when something goes wrong
+
 Copyright
 =========
 
 The authors of this software are listed in the AUTHORS file.
-This project is under GPLv2 (see COPYING file) except the icon which is licenced
-under Creative Commons BY-NC-SA by the Signal Spam team.
+This project is under GPLv2 (see COPYING file).
