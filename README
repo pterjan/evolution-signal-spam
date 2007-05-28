@@ -42,13 +42,13 @@ http://code.google.com/p/evolution-signal-spam/issues/list
 Major known issues
 ==================
 
-- The icon is the "Save" one which is really bad. The issue is that the whole
-  content of Signal Spam website is licenced under Creative Commons BY-NC-SA
-  so I can not include it if I want this software to be Free.
-
 - This plugin does not support i18n
 
 - The user is not told when something goes wrong
+
+- There is no icon in the menus. The issue is that the whole
+  content of Signal Spam website is licenced under Creative Commons BY-NC-SA
+  so I can not include it if I want this software to be Free.
 
 Copyright
 =========
