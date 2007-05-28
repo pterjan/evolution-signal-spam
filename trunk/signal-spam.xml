@@ -1,8 +1,7 @@
 <Root>
   <commands>
     <cmd name="SignalSpam" label="Report SPAM"
-      tip="Report this as SPAM to signal-spam"
-      pixtype="stock" pixname="Save"/>
+      tip="Report this as SPAM to signal-spam"/>
   </commands>
 
   <menu>

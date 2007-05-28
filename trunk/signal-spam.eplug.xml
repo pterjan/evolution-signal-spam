@@ -15,7 +15,6 @@
         <item
           type="item"
           path="72.signal_spam"
-          icon="stock_save"
           label="Report Spam"
           enable="many"
           visible="many"
