@@ -47,6 +47,7 @@ gboolean send_report(char *message, const char *user, const char *password)
   free(message);
   post = (char*)malloc(strlen("message=")+strlen(msg)+1);
   sprintf(post, "message=%s", msg);
+  g_free(msg);
   curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post);
 
   userpwd = (char*)malloc(strlen(user)+strlen(password)+2);
