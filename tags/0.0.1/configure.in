@@ -1,0 +1,82 @@
+# Process this file with autoconf to produce a configure script.
+AC_PREREQ(2.52)
+
+AC_INIT(signal-spam, 0.0.1)
+AC_CONFIG_SRCDIR(README)
+AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+
+AM_CONFIG_HEADER(config.h)
+
+EVOLUTION_BASE_VERSION=2.10
+AC_DEFINE_UNQUOTED(EVOLUTION_BASE_VERSION,"$EVOLUTION_BASE_VERSION",Evolution base version)
+
+DATASERVER_API_VERSION=1.2
+AC_DEFINE_UNQUOTED(DATASERVER_API_VERSION,"$DATASERVER_API_VERSION",Evolution Dataserver API version)
+AC_SUBST(DATASERVER_API_VERSION)
+
+AC_MSG_CHECKING(Evolution version)
+EVOLUTION_VERSION=`pkg-config --modversion evolution-shell-$EVOLUTION_BASE_VERSION 2>/dev/null`
+if test -z "$EVOLUTION_VERSION"; then
+	AC_MSG_ERROR(Evolution development libraries not installed)
+fi
+AC_SUBST(EVOLUTION_VERSION)
+AC_MSG_RESULT($EVOLUTION_VERSION)
+
+dnl Initialize maintainer mode
+AM_MAINTAINER_MODE
+
+AC_ISC_POSIX
+AC_PROG_CC
+AC_STDC_HEADERS
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+
+dnl Initialize libtool
+AM_DISABLE_STATIC
+AM_PROG_LIBTOOL
+
+dnl *************************
+dnl CFLAGS and LIBS and stuff
+dnl *************************
+
+GNOME_COMPILE_WARNINGS(maximum)
+CFLAGS="$CFLAGS $WARN_CFLAGS"
+
+AM_PATH_GLIB_2_0
+AM_PATH_GTK_2_0
+
+privlibdir="`pkg-config --variable=privlibdir evolution-shell-$EVOLUTION_BASE_VERSION`"
+AC_SUBST(privlibdir)
+
+privlibexecdir="`pkg-config --variable=privlibexecdir evolution-shell-$EVOLUTION_BASE_VERSION`"
+AC_SUBST(privlibexecdir)
+
+privincludedir="`pkg-config --variable=privincludedir evolution-shell-$EVOLUTION_BASE_VERSION`"
+AC_SUBST(privincludedir)
+
+imagesdir="`pkg-config --variable=imagesdir evolution-shell-$EVOLUTION_BASE_VERSION`"
+AC_SUBST(imagesdir)
+
+plugindir="$privlibdir/plugins"
+AC_SUBST(plugindir)
+
+PKG_CHECK_MODULES(CURL, libcurl)
+AC_SUBST(CURL_CFLAGS)
+AC_SUBST(CURL_LIBS)
+
+PKG_CHECK_MODULES(EVOLUTION, evolution-shell-$EVOLUTION_BASE_VERSION evolution-plugin-$EVOLUTION_BASE_VERSION)
+AC_SUBST(EVOLUTION_CFLAGS)
+AC_SUBST(EVOLUTION_LIBS)
+
+PKG_CHECK_MODULES(CAMEL, camel-$DATASERVER_API_VERSION)
+AC_SUBST(CAMEL_CFLAGS)
+AC_SUBST(CAMEL_LIBS)
+
+dnl ******************************
+dnl Makefiles
+dnl ******************************
+
+AC_OUTPUT([
+Makefile
+])
