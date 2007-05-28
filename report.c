@@ -27,7 +27,7 @@
 
 #include <glib/gbase64.h>
 
-gboolean send_report(const char *message, const char *user, const char *password)
+gboolean send_report(char *message, const char *user, const char *password)
 {
   CURL *curl;
   CURLcode res;
@@ -50,6 +50,7 @@ gboolean send_report(const char *message, const char *user, const char *password
   curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post);
 
   userpwd = (char*)malloc(strlen(user)+strlen(password)+2);
+
   sprintf(userpwd, "%s:%s", user, password);
   curl_easy_setopt(curl, CURLOPT_USERPWD, userpwd);
 
