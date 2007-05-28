@@ -3,3 +3,5 @@
 - support gettext
 - have a meaningful icon
 - write some user doc
+- remind the login in the password prompt
+- add a hook in the attachment popup menu to handle original messages attached by SA
