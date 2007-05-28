@@ -10,7 +10,7 @@ You will need the following libraries :
  - GLib
  - Gtk+
  - Gconf
- - Evolution
+ - Evolution 
  - Evolution Data Server
 
 If I forgot to list some, please report.

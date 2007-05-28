@@ -1,15 +1,16 @@
-INCLUDES =						\
-	-I$(top_srcdir)					\
-	$(SIGNAL_CFLAGS)			\
-	$(CURL_CFLAGS)					\
-	$(GTK_CFLAGS)					\
+INCLUDES = \
+	-I$(top_srcdir)	\
+	$(EVOLUTION_CFLAGS) \
+	$(CAMEL_CFLAGS)	\
+	$(CURL_CFLAGS) \
+	$(GTK_CFLAGS) \
 	$(GLIB_CFLAGS)
 
 plugin_DATA = signal-spam.eplug signal-spam.xml
 plugin_LTLIBRARIES = signal-spam.la
 
 signal_spam_la_SOURCES = signal-spam.c report.c
-signal_spam_la_LDFLAGS = $(CURL_LIBS) $(GLIB_LIBS) -module -avoid-version
+signal_spam_la_LDFLAGS = $(CURL_LIBS) $(GLIB_LIBS) $(GTK_LIBS) $(EVOLUTION_LIBS) $(CAMEL_LIBS) -module -avoid-version
 
 EXTRA_DIST = \
 	signal-spam.eplug.xml \
