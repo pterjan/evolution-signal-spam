@@ -1,0 +1,5 @@
+- add a gconf schema
+- give information to the user when something fails
+- support gettext
+- have a meaningful icon
+- fill README

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<e-plugin-list>
+  <!-- the path to the shared library -->
+  <e-plugin
+    id="org.gnome.plugin.signalspam"
+    type="shlib"
+    location="@PLUGINDIR@/signal-spam@SOEXT@"
+    name="Report SPAM">
+    
+    <author name="Pascal Terjan" email="pterjan@linuxfr.org"/>
+    <description>A plugin to report spam to signal-spam.fr.</description>
+
+    <hook class="org.gnome.evolution.mail.popup:1.0">
+      <menu id="org.gnome.evolution.mail.folderview.popup" target="select">
+        <item
+          type="item"
+          path="72.signal_spam"
+          icon="stock_save"
+          label="Report Spam"
+          enable="many"
+          visible="many"
+          activate="signal_spam"/>
+      </menu>
+    </hook>
+
+    <hook class="org.gnome.evolution.mail.bonobomenu:1.0">
+      <menu id="org.gnome.evolution.mail.browser" target="select">
+	<!-- the path to the bonobo menu description -->
+	<ui file="@PLUGINDIR@/signal-spam.xml"/>
+	<item
+	  type="item"
+	  verb="SignalSpam"
+	  path="/commands/SignalSpam"
+	  enable="many"
+	  activate="signal_spam_menu"/>
+      </menu>
+    </hook>
+
+    <hook class="org.gnome.evolution.mail.config:1.0">
+      <group id="org.gnome.evolution.mail.prefs" target="prefs">
+        <item type="section_table" path="40.junk" label="signal-spam.fr account"/>
+	<item type="item_table" path="40.junk" factory="signal_spam_login"/>
+      </group>
+    </hook>
+
+  </e-plugin>
+</e-plugin-list>
