@@ -1,0 +1,16 @@
+2007-05-28  Pascal Terjan  <pterjan@linuxfr.org>
+
+	- 0.0.2
+
+2007-05-28  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* report.c: Fix a memory leak !
+
+2007-05-28  Pascal Terjan  <pterjan@linuxfr.org>
+
+	- 0.0.1
+
+2007-05-28  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* README: Fill it
+	* ChangeLog: Start using it

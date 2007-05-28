@@ -1,0 +1,14 @@
+<Root>
+  <commands>
+    <cmd name="SignalSpam" label="Report SPAM"
+      tip="Report this as SPAM to signal-spam"/>
+  </commands>
+
+  <menu>
+    <placeholder name="MessagePlaceholder">
+      <submenu name="Message">
+    	  <menuitem name="SignalSpam" verb=""/>
+      </submenu>
+   </placeholder>
+  </menu>
+</Root>
