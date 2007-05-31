@@ -26,6 +26,9 @@
 #include <curl/easy.h>
 
 #include <glib/gbase64.h>
+#include <glib/gmem.h>
+
+gboolean send_report(char *message, const char *user, const char *password);
 
 gboolean send_report(char *message, const char *user, const char *password)
 {
