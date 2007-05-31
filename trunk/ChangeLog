@@ -1,5 +1,9 @@
 2007-05-31  Pascal Terjan  <pterjan@linuxfr.org>
 
+	* configure.in: require glib >= 2.12 for g_base64_encode
+
+2007-05-31  Pascal Terjan  <pterjan@linuxfr.org>
+
 	* report.c: Fix some warnings
 
 2007-05-28  Pascal Terjan  <pterjan@linuxfr.org>
