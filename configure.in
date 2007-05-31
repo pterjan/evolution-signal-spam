@@ -43,7 +43,7 @@ dnl *************************
 GNOME_COMPILE_WARNINGS(maximum)
 CFLAGS="$CFLAGS $WARN_CFLAGS"
 
-AM_PATH_GLIB_2_0
+AM_PATH_GLIB_2_0(2.12.0, , AC_MSG_ERROR(glib >= 2.12.0 is needed))
 AM_PATH_GTK_2_0
 
 privlibdir="`pkg-config --variable=privlibdir evolution-shell-$EVOLUTION_BASE_VERSION`"
