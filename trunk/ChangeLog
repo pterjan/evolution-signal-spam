@@ -1,3 +1,9 @@
+2007-06-01  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* signal-spam.eplug.xml, signal-spam.xml, configure.in,
+	Makefile.am, signal-spam.c, po/LINGUAS, po/POTFILES.in: 
+	first try to support i18n, only the settings work currently
+
 2007-05-31  Pascal Terjan  <pterjan@linuxfr.org>
 
 	* configure.in: require glib >= 2.12 for g_base64_encode

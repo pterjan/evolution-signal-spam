@@ -1,11 +1,12 @@
 # Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.52)
 
-AC_INIT(signal-spam, 0.0.2)
-AC_CONFIG_SRCDIR(README)
+AC_INIT(signal-spam, 0.0.3)
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 
 AM_CONFIG_HEADER(config.h)
+
+PKG_PROG_PKG_CONFIG
 
 EVOLUTION_BASE_VERSION=2.10
 AC_DEFINE_UNQUOTED(EVOLUTION_BASE_VERSION,"$EVOLUTION_BASE_VERSION",Evolution base version)
@@ -35,6 +36,18 @@ AC_PROG_MAKE_SET
 dnl Initialize libtool
 AM_DISABLE_STATIC
 AM_PROG_LIBTOOL
+
+dnl I18N stuff
+AC_PROG_INTLTOOL([0.35.5])
+
+AM_GLIB_GNU_GETTEXT
+
+localedir='$(prefix)/$(DATADIRNAME)/locale'
+AC_SUBST(localedir)
+
+GETTEXT_PACKAGE=signal-spam
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Package name for gettext])
 
 dnl *************************
 dnl CFLAGS and LIBS and stuff
@@ -79,4 +92,5 @@ dnl ******************************
 
 AC_OUTPUT([
 Makefile
+po/Makefile.in
 ])

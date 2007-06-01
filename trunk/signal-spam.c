@@ -17,6 +17,10 @@
  *
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
@@ -25,6 +29,7 @@
 #include <stdio.h>
 
 #include <glib.h>
+#include <glib/gi18n-lib.h>
 #include <glib/gstdio.h>
 
 #include <gtk/gtklabel.h>
@@ -112,7 +117,7 @@ static void report_messages (GPtrArray *uids, struct _CamelFolder *folder)
 		params->password = e_passwords_ask_password("signal-spam",
 							COMPONENT,
 							params->user,
-							"Please enter your password for signal-sapm.fr",
+							_("Please enter your password for signal-spam.fr"),
 							E_PASSWORDS_REMEMBER_FOREVER|E_PASSWORDS_SECRET,
 							&remember,
 							NULL);
@@ -190,7 +195,7 @@ signal_spam_login (EPlugin *epl, EConfigHookItemFactoryData *data)
 
 	row = ((GtkTable*)parent)->nrows;
 
-	label = gtk_label_new("Login:");
+	label = gtk_label_new(_("Login:"));
 	gtk_widget_show (label);
 	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
 	gtk_table_attach (GTK_TABLE (parent), label, 0, 1, row, row+1, GTK_FILL, 0, 0, 0);
