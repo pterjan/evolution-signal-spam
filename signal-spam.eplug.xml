@@ -5,17 +5,17 @@
     id="org.gnome.plugin.signalspam"
     type="shlib"
     location="@PLUGINDIR@/signal-spam@SOEXT@"
-    name="Report SPAM">
+    _name="Report SPAM">
     
     <author name="Pascal Terjan" email="pterjan@linuxfr.org"/>
-    <description>A plugin to report spam to signal-spam.fr.</description>
+    <_description>A plugin to report spam to signal-spam.fr</_description>
 
     <hook class="org.gnome.evolution.mail.popup:1.0">
       <menu id="org.gnome.evolution.mail.folderview.popup" target="select">
         <item
           type="item"
           path="72.signal_spam"
-          label="Report Spam"
+          _label="Report Spam"
           enable="many"
           visible="many"
           activate="signal_spam"/>
@@ -37,7 +37,7 @@
 
     <hook class="org.gnome.evolution.mail.config:1.0">
       <group id="org.gnome.evolution.mail.prefs" target="prefs">
-        <item type="section_table" path="40.junk" label="signal-spam.fr account"/>
+        <item type="section_table" path="40.junk" label="signal-spam.fr"/>
 	<item type="item_table" path="40.junk" factory="signal_spam_login"/>
       </group>
     </hook>
