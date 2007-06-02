@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <e-plugin-list>
-  <!-- the path to the shared library -->
   <e-plugin
     id="org.gnome.plugin.signalspam"
     type="shlib"
     location="@PLUGINDIR@/signal-spam@SOEXT@"
+    domain="@GETTEXT_PACKAGE@"
+    localedir="@LOCALEDIR@"
     _name="Report SPAM">
     
     <author name="Pascal Terjan" email="pterjan@linuxfr.org"/>
