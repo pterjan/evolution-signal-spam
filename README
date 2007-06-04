@@ -42,8 +42,6 @@ http://code.google.com/p/evolution-signal-spam/issues/list
 Major known issues
 ==================
 
-- This plugin does not support i18n
-
 - The user is not told when something goes wrong
 
 - There is no icon in the menus. The issue is that the whole

@@ -1,6 +1,6 @@
 - add a gconf schema
 - give information to the user when something fails
-- support gettext
+- support gettext in the menu
 - have a meaningful icon
 - write some user doc
 - remind the login in the password prompt
