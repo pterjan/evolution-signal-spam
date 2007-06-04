@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: signal-spam VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-02 13:23+0200\n"
+"POT-Creation-Date: 2007-06-04 18:09+0200\n"
 "PO-Revision-Date: 2007-05-31 19:44+0100\n"
 "Last-Translator: Pascal Terjan <pterjan@linuxfr.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,17 +19,9 @@ msgstr ""
 msgid "A plugin to report spam to signal-spam.fr"
 msgstr "Un plugin pour envoyer vos spam à signal-spam.fr"
 
-#: ../signal-spam.eplug.xml.h:2 ../signal-spam.xml.h:1
+#: ../signal-spam.eplug.xml.h:2
 msgid "Report SPAM"
 msgstr "Signaler le SPAM"
-
-#: ../signal-spam.eplug.xml.h:3
-msgid "Report Spam"
-msgstr "Signaler le SPAM"
-
-#: ../signal-spam.xml.h:2
-msgid "Report this as SPAM to Signal Spam"
-msgstr "Envoyer ce message à Signal Spam"
 
 #: ../signal-spam.c:120
 msgid "Please enter your password for signal-spam.fr"
@@ -38,3 +30,6 @@ msgstr ""
 #: ../signal-spam.c:198
 msgid "Login:"
 msgstr "Nom d'utilisateur :"
+
+#~ msgid "Report this as SPAM to Signal Spam"
+#~ msgstr "Envoyer ce message à Signal Spam"

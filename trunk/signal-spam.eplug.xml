@@ -16,7 +16,7 @@
         <item
           type="item"
           path="72.signal_spam"
-          _label="Report Spam"
+          _label="Report SPAM"
           enable="many"
           visible="many"
           activate="signal_spam"/>
