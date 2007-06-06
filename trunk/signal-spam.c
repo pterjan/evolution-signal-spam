@@ -87,7 +87,10 @@ static gpointer _report_messages (ReportMessagesParams *data)
 		camel_stream_flush (stream);
                 camel_object_unref (stream);
 		msg = (char *) g_byte_array_free(barray, FALSE);
-		send_report(msg, data->user, data->password);
+		if(!send_report(msg, data->user, data->password)){
+			//FIXME Report to the user
+			g_warning("signal-spam: Not yet setup.");
+		}
 	}
 	g_ptr_array_free (data->uids, TRUE);
 	free(data->user);
@@ -114,15 +117,17 @@ static void report_messages (GPtrArray *uids, struct _CamelFolder *folder)
 
 	params->password = e_passwords_get_password(COMPONENT, params->user);
 	if (!params->password) {
+		gchar *prompt = g_sprintf(_("Please enter the password for %s@signal-spam.fr"), params->user);
 		params->password = e_passwords_ask_password("signal-spam",
 							COMPONENT,
 							params->user,
-							_("Please enter your password for signal-spam.fr"),
+							prompt,
 							E_PASSWORDS_REMEMBER_FOREVER|E_PASSWORDS_SECRET,
 							&remember,
 							NULL);
+		gfree(prompt);
 		if (!params->password) {
-			//FIXME report to the user
+			//FIXME report to the user ?
 			return;
 		}
 	}

@@ -27,6 +27,7 @@
 
 #include <glib/gbase64.h>
 #include <glib/gmem.h>
+#include <glib/gmessages.h>
 
 gboolean send_report(char *message, const char *user, const char *password);
 
@@ -41,7 +42,8 @@ gboolean send_report(char *message, const char *user, const char *password)
   curl = curl_easy_init();
   if (!curl) {
     free(message);
-    return 0;
+    g_critical("signal-spam: CURL initialisation failed.");
+    return FALSE;
   }
 
   curl_easy_setopt(curl, CURLOPT_URL, "https://www.signal-spam.fr/api/signaler");
@@ -64,5 +66,9 @@ gboolean send_report(char *message, const char *user, const char *password)
   free(userpwd);
 
   curl_easy_cleanup(curl);
-  return 0;
+  if (!res) {
+    g_warning("signal-spam: submission failed.");
+    return FALSE;
+  }
+  return TRUE;
 }
