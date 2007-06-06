@@ -1,5 +1,10 @@
 2007-06-06  Pascal Terjan  <pterjan@linuxfr.org>
 
+	* signal-spam.c: remind the login in the password prompt
+	* po/signal-spam.pot, po/fr.po: update for the new prompt
+
+2007-06-06  Pascal Terjan  <pterjan@linuxfr.org>
+
 	* signal-spam.c, report.c: log some errors
 
 2007-06-04  Pascal Terjan  <pterjan@linuxfr.org>
