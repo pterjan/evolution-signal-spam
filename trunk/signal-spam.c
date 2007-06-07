@@ -117,7 +117,7 @@ static void report_messages (GPtrArray *uids, struct _CamelFolder *folder)
 
 	params->password = e_passwords_get_password(COMPONENT, params->user);
 	if (!params->password) {
-		gchar *prompt = g_sprintf(_("Please enter the password for %s@signal-spam.fr"), params->user);
+		gchar *prompt = g_strdup_printf(_("Please enter the password for %s@signal-spam.fr"), params->user);
 		params->password = e_passwords_ask_password("signal-spam",
 							COMPONENT,
 							params->user,
@@ -125,7 +125,7 @@ static void report_messages (GPtrArray *uids, struct _CamelFolder *folder)
 							E_PASSWORDS_REMEMBER_FOREVER|E_PASSWORDS_SECRET,
 							&remember,
 							NULL);
-		gfree(prompt);
+		g_free(prompt);
 		if (!params->password) {
 			//FIXME report to the user ?
 			return;
