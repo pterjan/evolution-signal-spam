@@ -1,5 +1,9 @@
 2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
 
+	- 0.0.4
+
+2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
+
 	* report.c: check response code
 
 2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
