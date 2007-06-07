@@ -89,7 +89,7 @@ static gpointer _report_messages (ReportMessagesParams *data)
 		msg = (char *) g_byte_array_free(barray, FALSE);
 		if(!send_report(msg, data->user, data->password)){
 			//FIXME Report to the user
-			g_warning("signal-spam: Not yet setup.");
+			g_warning("signal-spam: Failed to report.");
 		}
 	}
 	g_ptr_array_free (data->uids, TRUE);
