@@ -1,0 +1,55 @@
+This plugin will allow you to report your SPAM to http://www.signal-spam.fr/
+You need an account on that website before you can use the plugin.
+
+Installation
+============
+
+See the 'INSTALL' file for generic installation instructions.
+You will need the following libraries :
+ - Curl
+ - GLib
+ - Gtk+
+ - Gconf
+ - Evolution 
+ - Evolution Data Server
+
+If I forgot to list some, please report.
+
+Contributing
+============
+
+All contributions welcome (code, documentation, ideas, bug reports...).
+You can read the TODO file for some ideas.
+
+Downloading
+===========
+
+New releases will be available on the following URL :
+
+http://code.google.com/p/evolution-signal-spam/downloads/list
+
+The latest development version of the code is available in the subversion
+repository. It may be totally broken even if I'll try to keep it working.
+See http://code.google.com/p/evolution-signal-spam/source for instructions.
+
+How to report bugs
+==================
+
+Bugs should be reported to the Google bug tracking system
+
+http://code.google.com/p/evolution-signal-spam/issues/list
+
+Major known issues
+==================
+
+- The user is not told when something goes wrong
+
+- There is no icon in the menus. The issue is that the whole
+  content of Signal Spam website is licenced under Creative Commons BY-NC-SA
+  so I can not include it if I want this software to be Free.
+
+Copyright
+=========
+
+The authors of this software are listed in the AUTHORS file.
+This project is under GPLv2 (see COPYING file).

@@ -1,0 +1,8 @@
+Version 0.0.4
+
+- The login is now reminded in the password prompt
+- Errors while reporting now produce warning in the terminal
+
+Version 0.0.3
+
+- Support i18n

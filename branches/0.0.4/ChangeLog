@@ -1,0 +1,55 @@
+2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
+
+	- 0.0.4
+
+2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* report.c: check response code
+
+2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* signal-spam.c: fix the previous commit
+
+2007-06-06  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* signal-spam.c: remind the login in the password prompt
+	* po/signal-spam.pot, po/fr.po: update for the new prompt
+
+2007-06-06  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* signal-spam.c, report.c: log some errors
+
+2007-06-04  Pascal Terjan  <pterjan@linuxfr.org>
+
+	- 0.0.3
+
+2007-06-01  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* signal-spam.eplug.xml, signal-spam.xml, configure.in,
+	Makefile.am, signal-spam.c, po/LINGUAS, po/POTFILES.in: 
+	first try to support i18n, only the settings work currently
+
+2007-05-31  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* configure.in: require glib >= 2.12 for g_base64_encode
+
+2007-05-31  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* report.c: Fix some warnings
+
+2007-05-28  Pascal Terjan  <pterjan@linuxfr.org>
+
+	- 0.0.2
+
+2007-05-28  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* report.c: Fix a memory leak !
+
+2007-05-28  Pascal Terjan  <pterjan@linuxfr.org>
+
+	- 0.0.1
+
+2007-05-28  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* README: Fill it
+	* ChangeLog: Start using it
