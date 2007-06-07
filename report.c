@@ -73,10 +73,10 @@ gboolean send_report(char *message, const char *user, const char *password)
     case 202: /* Accepted */
       break;
     case 400: /* Bad Request */
-      g_warning("Bad Request");
+      g_warning("signal-spam: Bad Request");
       return FALSE;
     case 401: /* Not Authorized */
-      g_warning("Wrong login or password");
+      g_warning("signal-spam: Wrong login or password");
       return FALSE;
     default:
       g_warning("signal-spam: unexpected response %ld", response);
