@@ -1,5 +1,9 @@
 2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
 
+	* report.c: check response code
+
+2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
+
 	* signal-spam.c: fix the previous commit
 
 2007-06-06  Pascal Terjan  <pterjan@linuxfr.org>

@@ -36,6 +36,7 @@ gboolean send_report(char *message, const char *user, const char *password)
   CURL *curl;
   CURLcode res;
   char *post, *msg, *userpwd;
+  long response;
 
   curl_global_init(CURL_GLOBAL_ALL);
 
@@ -65,10 +66,21 @@ gboolean send_report(char *message, const char *user, const char *password)
   free(post);
   free(userpwd);
 
+  curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response);
+
   curl_easy_cleanup(curl);
-  if (!res) {
-    g_warning("signal-spam: submission failed.");
-    return FALSE;
+  switch (response) {
+    case 202: /* Accepted */
+      break;
+    case 400: /* Bad Request */
+      g_warning("Bad Request");
+      return FALSE;
+    case 401: /* Not Authorized */
+      g_warning("Wrong login or password");
+      return FALSE;
+    default:
+      g_warning("signal-spam: unexpected response %ld", response);
+      return (res==0);
   }
   return TRUE;
 }
