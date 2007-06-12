@@ -1,3 +1,8 @@
+2007-06-12  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* signal-spam.eplug.xml: Change the preferences section
+	label to "Signal Spam Options"
+
 2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
 
 	- 0.0.4
