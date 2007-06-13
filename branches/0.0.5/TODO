@@ -1,0 +1,6 @@
+- add a gconf schema
+- give information to the user when something fails
+- support gettext in the menu
+- have a meaningful icon
+- write some user doc
+- add a hook in the attachment popup menu to handle original messages attached by SA
