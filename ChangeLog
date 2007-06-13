@@ -1,5 +1,9 @@
 2007-06-13  Pascal Terjan  <pterjan@linuxfr.org>
 
+	- 0.0.5
+
+2007-06-13  Pascal Terjan  <pterjan@linuxfr.org>
+
 	* configure.in: Support building with evo > 2.10
 
 2007-06-13  Pascal Terjan  <pterjan@linuxfr.org>
