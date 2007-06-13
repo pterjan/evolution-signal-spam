@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-08 01:43+0200\n"
+"POT-Creation-Date: 2007-06-13 21:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,10 @@ msgstr ""
 
 #: ../signal-spam.eplug.xml.h:2 ../signal-spam.xml.h:1
 msgid "Report SPAM"
+msgstr ""
+
+#: ../signal-spam.eplug.xml.h:3
+msgid "Signal Spam Options"
 msgstr ""
 
 #: ../signal-spam.xml.h:2
