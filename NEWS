@@ -1,3 +1,7 @@
+Version 0.0.5
+
+- Support building with evolution > 2.10
+
 Version 0.0.4
 
 - The login is now reminded in the password prompt
