@@ -109,7 +109,7 @@ static void report_messages (GPtrArray *uids, struct _CamelFolder *folder)
 
 	params->user = gconf_client_get_string(gconf, GCONFKEY_LOGIN, NULL);
 	if (!params->user) {
-		//FIXME Report to the user
+		//FIXME Report to the user or rather ask for the login here...
 		g_warning("signal-spam: Not yet setup.");
 		g_free(params);
 		return;
