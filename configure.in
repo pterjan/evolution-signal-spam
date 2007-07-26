@@ -1,25 +1,22 @@
 # Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.52)
 
-AC_INIT(signal-spam, 0.0.6)
+AC_INIT(signal-spam, 0.0.4)
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 
 AM_CONFIG_HEADER(config.h)
 
 PKG_PROG_PKG_CONFIG
 
+EVOLUTION_BASE_VERSION=2.10
+AC_DEFINE_UNQUOTED(EVOLUTION_BASE_VERSION,"$EVOLUTION_BASE_VERSION",Evolution base version)
+
 DATASERVER_API_VERSION=1.2
 AC_DEFINE_UNQUOTED(DATASERVER_API_VERSION,"$DATASERVER_API_VERSION",Evolution Dataserver API version)
 AC_SUBST(DATASERVER_API_VERSION)
 
 AC_MSG_CHECKING(Evolution version)
-for EVOLUTION_BASE_VERSION in "" -2.10 -2.8
-do
-	EVOLUTION_VERSION=`pkg-config --modversion evolution-shell$EVOLUTION_BASE_VERSION 2>/dev/null`
-	if test -n "$EVOLUTION_VERSION"; then
-		break 1
-	fi
-done
+EVOLUTION_VERSION=`pkg-config --modversion evolution-shell-$EVOLUTION_BASE_VERSION 2>/dev/null`
 if test -z "$EVOLUTION_VERSION"; then
 	AC_MSG_ERROR(Evolution development libraries not installed)
 fi
@@ -62,16 +59,16 @@ CFLAGS="$CFLAGS $WARN_CFLAGS"
 AM_PATH_GLIB_2_0(2.12.0, , AC_MSG_ERROR(glib >= 2.12.0 is needed))
 AM_PATH_GTK_2_0
 
-privlibdir="`pkg-config --variable=privlibdir evolution-shell$EVOLUTION_BASE_VERSION`"
+privlibdir="`pkg-config --variable=privlibdir evolution-shell-$EVOLUTION_BASE_VERSION`"
 AC_SUBST(privlibdir)
 
-privlibexecdir="`pkg-config --variable=privlibexecdir evolution-shell$EVOLUTION_BASE_VERSION`"
+privlibexecdir="`pkg-config --variable=privlibexecdir evolution-shell-$EVOLUTION_BASE_VERSION`"
 AC_SUBST(privlibexecdir)
 
-privincludedir="`pkg-config --variable=privincludedir evolution-shell$EVOLUTION_BASE_VERSION`"
+privincludedir="`pkg-config --variable=privincludedir evolution-shell-$EVOLUTION_BASE_VERSION`"
 AC_SUBST(privincludedir)
 
-imagesdir="`pkg-config --variable=imagesdir evolution-shell$EVOLUTION_BASE_VERSION`"
+imagesdir="`pkg-config --variable=imagesdir evolution-shell-$EVOLUTION_BASE_VERSION`"
 AC_SUBST(imagesdir)
 
 plugindir="$privlibdir/plugins"
@@ -81,7 +78,7 @@ PKG_CHECK_MODULES(CURL, libcurl)
 AC_SUBST(CURL_CFLAGS)
 AC_SUBST(CURL_LIBS)
 
-PKG_CHECK_MODULES(EVOLUTION, evolution-shell$EVOLUTION_BASE_VERSION evolution-plugin$EVOLUTION_BASE_VERSION)
+PKG_CHECK_MODULES(EVOLUTION, evolution-shell-$EVOLUTION_BASE_VERSION evolution-plugin-$EVOLUTION_BASE_VERSION)
 AC_SUBST(EVOLUTION_CFLAGS)
 AC_SUBST(EVOLUTION_LIBS)
 

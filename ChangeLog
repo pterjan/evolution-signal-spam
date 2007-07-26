@@ -1,29 +1,3 @@
-2007-07-26  Pascal Terjan  <pterjan@linuxfr.org>
-
-	- 0.0.6
-
-2007-07-26  Pascal Terjan  <pterjan@linuxfr.org>
-
-	* Makefile.am: Ship intltool*.in
-
-2007-06-13  Pascal Terjan  <pterjan@linuxfr.org>
-
-	- 0.0.5
-
-2007-06-13  Pascal Terjan  <pterjan@linuxfr.org>
-
-	* configure.in: Support building with evo > 2.10
-
-2007-06-13  Pascal Terjan  <pterjan@linuxfr.org>
-
-	* po/signal-spam.pot po/fr.po signal-spam.eplug.xml: 
-	Translate the preferences section label
-
-2007-06-12  Pascal Terjan  <pterjan@linuxfr.org>
-
-	* signal-spam.eplug.xml: Change the preferences section
-	label to "Signal Spam Options"
-
 2007-06-07  Pascal Terjan  <pterjan@linuxfr.org>
 
 	- 0.0.4

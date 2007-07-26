@@ -7,10 +7,10 @@ Installation
 See the 'INSTALL' file for generic installation instructions.
 You will need the following libraries :
  - Curl
- - GLib >= 2.12
+ - GLib
  - Gtk+
  - Gconf
- - Evolution >= 2.8
+ - Evolution 
  - Evolution Data Server
 
 If I forgot to list some, please report.
