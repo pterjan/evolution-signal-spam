@@ -27,7 +27,6 @@
 
 #include <glib/gbase64.h>
 #include <glib/gmem.h>
-#include <glib/gmessages.h>
 
 gboolean send_report(char *message, const char *user, const char *password);
 
@@ -36,15 +35,13 @@ gboolean send_report(char *message, const char *user, const char *password)
   CURL *curl;
   CURLcode res;
   char *post, *msg, *userpwd;
-  long response;
 
   curl_global_init(CURL_GLOBAL_ALL);
 
   curl = curl_easy_init();
   if (!curl) {
     free(message);
-    g_critical("signal-spam: CURL initialisation failed.");
-    return FALSE;
+    return 0;
   }
 
   curl_easy_setopt(curl, CURLOPT_URL, "https://www.signal-spam.fr/api/signaler");
@@ -57,6 +54,7 @@ gboolean send_report(char *message, const char *user, const char *password)
   curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post);
 
   userpwd = (char*)malloc(strlen(user)+strlen(password)+2);
+
   sprintf(userpwd, "%s:%s", user, password);
   curl_easy_setopt(curl, CURLOPT_USERPWD, userpwd);
 
@@ -65,21 +63,6 @@ gboolean send_report(char *message, const char *user, const char *password)
   free(post);
   free(userpwd);
 
-  curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response);
-
   curl_easy_cleanup(curl);
-  switch (response) {
-    case 202: /* Accepted */
-      break;
-    case 400: /* Bad Request */
-      g_warning("signal-spam: Bad Request");
-      return FALSE;
-    case 401: /* Not Authorized */
-      g_warning("signal-spam: Wrong login or password");
-      return FALSE;
-    default:
-      g_warning("signal-spam: unexpected response %ld", response);
-      return (res==0);
-  }
-  return TRUE;
+  return 0;
 }
