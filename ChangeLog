@@ -1,3 +1,7 @@
+2007-07-26  Pascal Terjan  <pterjan@linuxfr.org>
+
+	* Makefile.am: Ship intltool*.in
+
 2007-06-13  Pascal Terjan  <pterjan@linuxfr.org>
 
 	- 0.0.5

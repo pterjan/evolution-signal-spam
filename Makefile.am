@@ -17,7 +17,15 @@ signal_spam_la_LDFLAGS = $(CURL_LIBS) $(GLIB_LIBS) $(GTK_LIBS) $(EVOLUTION_LIBS)
 EXTRA_DIST = \
 	signal-spam.eplug.xml \
 	signal-spam.xml \
-	TODO 
+	TODO \
+	intltool-extract.in \
+	intltool-merge.in \
+	intltool-update.in
+
+DISTCLEANFILES = \
+  intltool-extract \
+  intltool-merge \
+  intltool-update
 
 BUILT_SOURCES = signal-spam.eplug
 CLEANFILES = $(BUILT_SOURCES)
