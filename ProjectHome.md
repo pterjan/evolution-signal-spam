@@ -1,0 +1,1 @@
+This simple plugin adds a _Report SPAM_ entry in the menu so that you can easily send your spam to http://www.signal-spam.fr/
